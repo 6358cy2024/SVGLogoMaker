@@ -12,7 +12,7 @@ const questions = [
     {
         type: 'input',
         name: 'color',
-        message: 'What color do you want?',
+        message: 'What color do you want? Black will not work',
     },
     {
         type: 'input',
@@ -40,3 +40,4 @@ function init() {
             writeToFile(shapes(data));//sends information to GenerateMarkdown file
         })
 }
+init();
