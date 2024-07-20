@@ -1,13 +1,13 @@
 const fs = require('fs');
-const inquirer = require('inquirer');
+const { default: inquirer } = require("inquirer");
 const shapes = require('./lib/shapes');
 
 const questions = [
     {
-        type: 'input',
+        type: 'list',
         name: 'shape',
         message: 'What shape will you use?',
-        choices: ['Circle', 'Square', 'Triangle']
+        choices: ["Circle", "Square", "Triangle"]
     },
     {
         type: 'input',
@@ -35,7 +35,7 @@ function writeToFile(data) {
 
 
 function init() {
-    inquirer.prompt(questions)//gets questions
+    inquirer.prompt(questions)
         .then((data) => {
             writeToFile(shapes(data));//sends information to GenerateMarkdown file
         })
