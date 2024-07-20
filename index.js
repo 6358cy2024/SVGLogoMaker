@@ -1,3 +1,4 @@
+//Christian Yanez
 const fs = require('fs');
 const { default: inquirer } = require("inquirer");
 const shapes = require('./lib/shapes');
@@ -12,7 +13,12 @@ const questions = [
     {
         type: 'input',
         name: 'color',
-        message: 'What color do you want? Black will not work',
+        message: 'What color do you want the shape to be?',
+    },
+    {
+        type: 'input',
+        name: 'textcolor',
+        message: 'What color do you want the text to be?',
     },
     {
         type: 'input',
@@ -27,7 +33,7 @@ function writeToFile(data) {
         if (error) {
             return console.log(error);
         } else {
-            console.log('File successfully made.');
+            console.log('Generated logo.svg');
         }
     })
 };
@@ -37,7 +43,7 @@ function writeToFile(data) {
 function init() {
     inquirer.prompt(questions)
         .then((data) => {
-            writeToFile(shapes(data));//sends information to GenerateMarkdown file
+            writeToFile(shapes(data));//sends information
         })
 }
 init();
