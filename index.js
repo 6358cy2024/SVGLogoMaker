@@ -1,7 +1,10 @@
 //Christian Yanez
 const fs = require('fs');
 const { default: inquirer } = require("inquirer");
-const shapes = require('./lib/shapes');
+const {Circle} = require('./lib/shapes');
+const {Square} = require('./lib/shapes');
+const {Triangle} = require('./lib/shapes');
+const shapeMaker = require('./lib/shapeMaker');
 
 const questions = [
     {
@@ -29,6 +32,7 @@ const questions = [
 
 
 function writeToFile(data) {
+
     fs.writeFile('logo.svg', data, (error) => {//use the input data to insert values.
         if (error) {
             return console.log(error);
@@ -43,7 +47,10 @@ function writeToFile(data) {
 function init() {
     inquirer.prompt(questions)
         .then((data) => {
-            writeToFile(shapes(data));//sends information
+            const template = shapeMaker(data);
+            console.log(template);
+        
+            writeToFile(template);//sends information
         })
 }
 init();
