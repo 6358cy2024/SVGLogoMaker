@@ -9,4 +9,6 @@ Npm inquirer, and jest are used in this project to take the user responses and t
 The repsonses are put into a class that is constructed and from there it is rendered to get the logo
 This is not a deployed assignment, it is solely meant to be terminal based.
 
-I will have a video that demonstrates how the program operates and the result that you get from running it properly.
+Link to video:
+
+https://drive.google.com/file/d/1eLyznqjRTWXoEcWdZk2s265dkLb0KUeI/view?usp=drive_link
